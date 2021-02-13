@@ -1,5 +1,4 @@
 <?php
-require_once 'config/config.php';
 require_once 'controller.php';
 require_once 'controllers/error.php';
 require_once 'view.php';
