@@ -1,4 +1,4 @@
-<form action="insert" method="POST">
+<form action="<?php echo constant('URL'); ?>agregar/insert" method="POST">
 	<div class="row">
 		<div class="col col-8">
 			<label for="nombre" class="form-label">Nombre</label>

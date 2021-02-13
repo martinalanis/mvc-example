@@ -16,10 +16,8 @@ class Producto
 		if ($mysqli->connect_errno) {
 		  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 		  return null;
-		} else {
-			// echo 'conectado a db';
-			return $mysqli;
 		}
+		return $mysqli;
 	}
 
 	public function getAll()
@@ -27,6 +25,12 @@ class Producto
 		$sql = "SELECT * FROM productos";
 		$result = $this->db->query($sql);
 		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
+	public function insert($n, $c)
+	{
+		$sql = "INSERT into productos values(null, '".$n."', '".$c."')";
+		return $this->db->query($sql);
 	}
 }
 

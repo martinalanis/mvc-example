@@ -21,15 +21,15 @@ require_once 'core/app.php';
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./">Inicio</a>
+            <a class="nav-link" aria-current="page" href="<?php echo constant('URL'); ?>">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="consulta">Consulta</a>
+            <a class="nav-link" aria-current="page" href="<?php echo constant('URL'); ?>consulta">Consulta</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="agregar">Agregar</a>
+            <a class="nav-link" href="<?php echo constant('URL'); ?>agregar">Agregar</a>
           </li>
-        </ul>
+        </ul>  
       </div>
     </div>
   </nav>
