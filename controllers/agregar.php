@@ -6,7 +6,8 @@ class Agregar extends Controller
 	function __construct()
 	{
 		Parent::__construct();
-		// $this->view->response = null;
+		/* Verifica si hay parametro en url para saber si viene de insercion de datos */
+		$this->view->response = isset($_GET['res']) ? $_GET['res'] : null;
 		$this->view->render('agregar/index');
 	}
 
@@ -15,19 +16,12 @@ class Agregar extends Controller
 		$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
 		$cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : null;
 
+		/* Insertar y redirigir segun sea el caso */
 		if ($this->producto->insert($nombre, $cantidad)) {
-			// echo '<div class="alert alert-success mt-3" role="alert">
-			//   Se agrego el producto.
-			// </div>';
 			header('Location:'.constant('URL').'agregar?res=si');
 		} else {
-			// echo '<div class="alert alert-danger mt-3" role="alert">
-			//   Fallo al guardar el producto.
-			// </div>';
 			header('Location:'.constant('URL').'agregar?res=fallo');
 		}
-
-		// header('Location:'.constant('URL').'agregar?res=true');
 
 	}
 }

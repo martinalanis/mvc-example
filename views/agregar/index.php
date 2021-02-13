@@ -1,3 +1,12 @@
+<?php if ($this->response && $this->response === 'si'): ?>
+	<div class="alert alert-success mt-3" role="alert">
+		Se agrego el producto.
+	</div>
+<?php elseif($this->response && $this->response === 'fallo'): ?>
+	<div class="alert alert-danger mt-3" role="alert">
+		Fallo al guardar los datos
+	</div>
+<?php endif; ?>
 <form action="<?php echo constant('URL'); ?>agregar/insert" method="POST">
 	<div class="row">
 		<div class="col col-8">
